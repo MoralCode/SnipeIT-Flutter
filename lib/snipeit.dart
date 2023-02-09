@@ -1,3 +1,6 @@
-int calculate() {
-  return 6 * 7;
+class SnipeIT {
+  String url;
+  String token;
+
+  SnipeIT({required this.url, required this.token});
 }
