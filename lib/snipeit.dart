@@ -13,5 +13,11 @@ class SnipeIT {
   SnipeIT({required this.url, required this.accessToken, http.Client? client})
       : _client = client ?? http.Client();
 
-
+  Map<String, String> _getHeaders() {
+    return {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer $accessToken'
+    };
+  }
 }
