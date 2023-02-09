@@ -9,6 +9,8 @@ class SnipeIT {
   ///
   /// [url] the baseurl to perform REST API calls against
   /// [accessToken] the API Key for authenticating with the API
+  /// [client] an (optional) HTTP client to use for accessing the API. Useful for unit testing.
+  SnipeIT({required this.url, required this.accessToken, http.Client? client})
       : _client = client ?? http.Client();
 
 
