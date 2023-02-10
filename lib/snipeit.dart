@@ -6,7 +6,7 @@ class SnipeIT {
   Uri _url;
   String accessToken;
   http.Client _client;
-  final String apiPrefix = "api/v1";
+  final String apiPrefix = "api/v1/";
 
   /// Represents a SnipeIT installation
   ///
@@ -15,7 +15,9 @@ class SnipeIT {
   /// [client] an (optional) HTTP client to use for accessing the API. Useful for unit testing.
   SnipeIT({required String url, required this.accessToken, http.Client? client})
       : _url = Uri.parse(url),
-        _client = client ?? http.Client();
+        _client = client ?? http.Client() {
+    _url = _url.resolve(apiPrefix);
+  }
 
   Map<String, String> _getHeaders() {
     return {
@@ -31,7 +33,7 @@ class SnipeIT {
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
     var decodedResponse =
-        jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, String>;
+        jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
     print(decodedResponse);
     print(decodedResponse["rows"]);
 
