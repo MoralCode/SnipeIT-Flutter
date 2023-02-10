@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:snipeit/models/location.dart';
 
 class SnipeIT {
   Uri _url;
@@ -27,7 +28,7 @@ class SnipeIT {
     };
   }
 
-  Future<List<String>> getLocations() async {
+  Future<List<Location>> getLocations() async {
     var response =
         await _client.get(_url.resolve('locations'), headers: _getHeaders());
     print('Response status: ${response.statusCode}');
@@ -40,7 +41,7 @@ class SnipeIT {
     // if (decodedResponse["rows"] != null){
     //   return decodedResponse["rows"]!.entries.map((row) => {'id': row["id"], 'name': row["name"]});
     // }
-    return ["1", "2"];
+    return decodedResponse["rows"].map((l) => Location.fromJson(l));
   }
 
   void dispose() {
