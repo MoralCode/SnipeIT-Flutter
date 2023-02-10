@@ -17,6 +17,6 @@ class SnipeDateTime {
   factory SnipeDateTime.fromJson(Map<String, dynamic> json) =>
       _$SnipeDateTimeFromJson(json);
 
-  /// Connect the generated [_$PersonToJson] function to the `toJson` method.
+  /// Connect the generated [_$SnipeDateTimeToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$SnipeDateTimeToJson(this);
 }

@@ -33,11 +33,11 @@ class Location {
       required this.created_at,
       required this.updated_at});
 
-  /// Connect the generated [_$PersonFromJson] function to the `fromJson`
+  /// Connect the generated [_$LocationFromJson] function to the `fromJson`
   /// factory.
   factory Location.fromJson(Map<String, dynamic> json) =>
       _$LocationFromJson(json);
 
-  /// Connect the generated [_$PersonToJson] function to the `toJson` method.
+  /// Connect the generated [_$LocationToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$LocationToJson(this);
 }
