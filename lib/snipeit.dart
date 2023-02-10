@@ -31,16 +31,9 @@ class SnipeIT {
   Future<List<Location>> getLocations() async {
     var response =
         await _client.get(_url.resolve('locations'), headers: _getHeaders());
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
     var decodedResponse =
         jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
-    print(decodedResponse);
-    print(decodedResponse["rows"]);
 
-    // if (decodedResponse["rows"] != null){
-    //   return decodedResponse["rows"]!.entries.map((row) => {'id': row["id"], 'name': row["name"]});
-    // }
     return decodedResponse["rows"]
         .map<Location>((l) => Location.fromJson(l))
         .toList();
