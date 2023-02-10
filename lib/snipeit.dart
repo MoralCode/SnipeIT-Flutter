@@ -41,7 +41,9 @@ class SnipeIT {
     // if (decodedResponse["rows"] != null){
     //   return decodedResponse["rows"]!.entries.map((row) => {'id': row["id"], 'name': row["name"]});
     // }
-    return decodedResponse["rows"].map((l) => Location.fromJson(l));
+    return decodedResponse["rows"]
+        .map<Location>((l) => Location.fromJson(l))
+        .toList();
   }
 
   void dispose() {
