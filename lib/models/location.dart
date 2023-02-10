@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'datetime.dart';
+
 part 'location.g.dart';
 
 @JsonSerializable()
@@ -13,7 +15,7 @@ class Location {
   String name;
   String? address, address2, city, state, country, zip;
   // image, currency, ldap_ou
-  DateTime created_at, updated_at;
+  SnipeDateTime created_at, updated_at;
 
   Location(
       {required this.id,
