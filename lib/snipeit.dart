@@ -24,4 +24,24 @@ class SnipeIT {
       'Authorization': 'Bearer $accessToken'
     };
   }
+
+  Future<List<String>> getLocations() async {
+    var response =
+        await _client.get(_url.resolve('locations'), headers: _getHeaders());
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+    var decodedResponse =
+        jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, String>;
+    print(decodedResponse);
+    print(decodedResponse["rows"]);
+
+    // if (decodedResponse["rows"] != null){
+    //   return decodedResponse["rows"]!.entries.map((row) => {'id': row["id"], 'name': row["name"]});
+    // }
+    return ["1", "2"];
+  }
+
+  void dispose() {
+    _client.close();
+  }
 }
