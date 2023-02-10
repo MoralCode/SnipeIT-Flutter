@@ -4,15 +4,14 @@ part 'location.g.dart';
 
 @JsonSerializable()
 class Location {
-  final int name,
-      id,
+  final int id,
       assigned_assets_count,
       assets_count,
       rtd_assets_count,
       users_count;
-  final int? zip;
 
-  String? address, address2, city, state, country;
+  String name;
+  String? address, address2, city, state, country, zip;
   // image, currency, ldap_ou
   DateTime created_at, updated_at;
 
