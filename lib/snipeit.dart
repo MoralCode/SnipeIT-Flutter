@@ -1,7 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:snipeit/models/location.dart';
+
+import 'models/location.dart';
+
+export 'package:snipeit/models/location.dart' show Location;
 
 class SnipeIT {
   Uri _url;
