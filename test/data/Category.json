@@ -1,0 +1,29 @@
+{
+	"id": 1,
+	"name": "Laptops",
+	"image": null,
+	"category_type": "Asset",
+	"has_eula": true,
+	"use_default_eula": true,
+	"eula": "<p>Explicabo at quia eum ipsam explicabo quod quod. Debitis ut rerum doloribus maxime cupiditate explicabo voluptatem.</p>",
+	"checkin_email": true,
+	"require_acceptance": true,
+	"item_count": 1173,
+	"assets_count": 1173,
+	"accessories_count": 0,
+	"consumables_count": 0,
+	"components_count": 0,
+	"licenses_count": 0,
+	"created_at": {
+		"datetime": "2023-02-11 17:42:05",
+		"formatted": "Sat Feb 11, 2023 5:42PM"
+	},
+	"updated_at": {
+		"datetime": "2023-02-11 17:42:05",
+		"formatted": "Sat Feb 11, 2023 5:42PM"
+	},
+	"available_actions": {
+		"update": true,
+		"delete": false
+	}
+}
