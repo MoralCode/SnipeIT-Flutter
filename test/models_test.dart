@@ -18,6 +18,8 @@ void main() {
       expect(location.id, 1);
       expect(location.name, "New Cecilia");
       expect(location.city, "Veumport");
+      expect(location.created_at.datetime, "2023-02-11 17:42:05");
+      expect(location.created_at.formatted, "Sat Feb 11, 2023 5:42PM");
     });
   });
 }
