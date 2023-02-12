@@ -1,26 +1,20 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'basemodel.dart';
 import 'datetime.dart';
 
 part 'location.g.dart';
 
 @JsonSerializable()
-class Location {
-  final int id,
-      assigned_assets_count,
-      assets_count,
-      rtd_assets_count,
-      users_count;
+class Location extends BaseModel {
+  final int assigned_assets_count, assets_count, rtd_assets_count, users_count;
 
-  String name;
   String? address, address2, city, state, country, zip;
   // image, currency, ldap_ou
   SnipeDateTime created_at, updated_at;
 
-  Location(
-      {required this.id,
-      required this.name,
-      this.address,
+  Location(String name, int id,
+      {this.address,
       this.address2,
       this.city,
       this.state,
@@ -31,7 +25,8 @@ class Location {
       this.rtd_assets_count = 0,
       this.users_count = 0,
       required this.created_at,
-      required this.updated_at});
+      required this.updated_at})
+      : super(id, name);
 
   /// Connect the generated [_$LocationFromJson] function to the `fromJson`
   /// factory.
