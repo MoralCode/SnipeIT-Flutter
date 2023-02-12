@@ -6,12 +6,11 @@ import 'datetime.dart';
 part 'location.g.dart';
 
 @JsonSerializable()
-class Location extends BaseModel {
+class Location extends TimestampedBaseModel {
   final int assigned_assets_count, assets_count, rtd_assets_count, users_count;
 
   String? address, address2, city, state, country, zip;
   // image, currency, ldap_ou
-  SnipeDateTime created_at, updated_at;
 
   Location(String name, int id,
       {this.address,
@@ -24,9 +23,9 @@ class Location extends BaseModel {
       this.assets_count = 0,
       this.rtd_assets_count = 0,
       this.users_count = 0,
-      required this.created_at,
-      required this.updated_at})
-      : super(id, name);
+      required SnipeDateTime created_at,
+      required SnipeDateTime updated_at})
+      : super(id, name, created_at: created_at, updated_at: updated_at);
 
   /// Connect the generated [_$LocationFromJson] function to the `fromJson`
   /// factory.
