@@ -1,0 +1,32 @@
+{
+	"id": 1,
+	"name": "New Cecilia",
+	"image": "https://develop.snipeitapp.com/uploads/locations/7.jpg",
+	"address": "92749 O&#039;Connell Walks Apt. 567",
+	"address2": "Apt. 963",
+	"city": "Veumport",
+	"state": "NV",
+	"country": "GT",
+	"zip": "26557-1875",
+	"assigned_assets_count": 6,
+	"assets_count": 132,
+	"rtd_assets_count": 143,
+	"users_count": 0,
+	"currency": "USD",
+	"ldap_ou": null,
+	"created_at": {
+		"datetime": "2023-02-11 17:42:05",
+		"formatted": "Sat Feb 11, 2023 5:42PM"
+	},
+	"updated_at": {
+		"datetime": "2023-02-11 17:42:05",
+		"formatted": "Sat Feb 11, 2023 5:42PM"
+	},
+	"parent": null,
+	"manager": null,
+	"children": [],
+	"available_actions": {
+		"update": true,
+		"delete": false
+	}
+}
