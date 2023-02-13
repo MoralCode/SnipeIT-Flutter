@@ -46,6 +46,12 @@ class SnipeIT {
     return _unwrapResponse(decodedResponse);
   }
 
+  Future<List<Location>> getLocations() async {
+    var response = await _fetchJson("locations");
+
+    return response.map<Location>((l) => Location.fromJson(l)).toList();
+  }
+
   Future<List<Category>> getCategories() async {
     var response = await _fetchJson("categories");
 
