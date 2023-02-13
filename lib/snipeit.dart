@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:snipeit/models/manufacturer.dart';
 
 import 'models/location.dart';
 import 'models/category.dart';
 
 export 'package:snipeit/models/location.dart' show Location;
 export 'package:snipeit/models/category.dart' show Category;
+export 'package:snipeit/models/manufacturer.dart' show Manufacturer;
 
 class SnipeIT {
   Uri _url;
@@ -56,6 +58,12 @@ class SnipeIT {
     var response = await _fetchJson("categories");
 
     return response.map<Category>((l) => Category.fromJson(l)).toList();
+  }
+
+  Future<List<Manufacturer>> getManufacturers() async {
+    var response = await _fetchJson("manufacturers");
+
+    return response.map<Manufacturer>((l) => Manufacturer.fromJson(l)).toList();
   }
 
   void dispose() {

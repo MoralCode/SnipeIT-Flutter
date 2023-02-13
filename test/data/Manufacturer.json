@@ -1,0 +1,27 @@
+{
+	"id": 1,
+	"name": "Apple",
+	"url": "https://apple.com",
+	"image": "https://develop.snipeitapp.com/uploads/manufacturers/apple.jpg",
+	"support_url": "https://support.apple.com",
+	"support_phone": "1-276-829-9305",
+	"support_email": "lreichel@example.org",
+	"assets_count": 159,
+	"licenses_count": 0,
+	"consumables_count": 0,
+	"accessories_count": 3,
+	"created_at": {
+		"datetime": "2023-02-13 07:42:05",
+		"formatted": "Mon Feb 13, 2023 7:42AM"
+	},
+	"updated_at": {
+		"datetime": "2023-02-13 07:42:05",
+		"formatted": "Mon Feb 13, 2023 7:42AM"
+	},
+	"deleted_at": null,
+	"available_actions": {
+		"update": true,
+		"restore": false,
+		"delete": false
+	}
+}
