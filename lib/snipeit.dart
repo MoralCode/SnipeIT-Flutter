@@ -3,8 +3,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'models/location.dart';
+import 'models/category.dart';
 
 export 'package:snipeit/models/location.dart' show Location;
+export 'package:snipeit/models/category.dart' show Category;
 
 class SnipeIT {
   Uri _url;
@@ -42,6 +44,12 @@ class SnipeIT {
         jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
 
     return _unwrapResponse(decodedResponse);
+  }
+
+  Future<List<Category>> getCategories() async {
+    var response = await _fetchJson("categories");
+
+    return response.map<Category>((l) => Category.fromJson(l)).toList();
   }
 
   void dispose() {
