@@ -31,15 +31,17 @@ class SnipeIT {
     };
   }
 
-  Future<List<Location>> getLocations() async {
+  List<Map<String, dynamic>> _unwrapResponse(Map<String, dynamic> json) {
+    return json["rows"];
+  }
+
+  Future<List<Map<String, dynamic>>> _fetchJson(pathname) async {
     var response =
-        await _client.get(_url.resolve('locations'), headers: _getHeaders());
+        await _client.get(_url.resolve(pathname), headers: _getHeaders());
     var decodedResponse =
         jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
 
-    return decodedResponse["rows"]
-        .map<Location>((l) => Location.fromJson(l))
-        .toList();
+    return _unwrapResponse(decodedResponse);
   }
 
   void dispose() {
